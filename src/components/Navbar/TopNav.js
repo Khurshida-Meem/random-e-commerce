@@ -2,11 +2,14 @@ import { Box, Container } from '@mui/material';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import logo from '../../assets/logo.svg'
-import { Flex } from '../../Element.style';
+import { Flex } from '../../Element.styled';
 import Badge from '@mui/material/Badge';
 import { ThemeProvider } from '@mui/material/styles';
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { iconStyle, inputStyle, searchContainer, theme } from './styles/TopNavStyles';
+import { IoIosHeartEmpty } from "react-icons/io";
+import { BsPerson } from "react-icons/bs";
+import { iconStyle, inputStyle, searchContainer, searchIcon, theme, badgetext } from './styles/TopNavStyles';
+import { visibility } from '../../Element.style';
 
 
 const TopNav = () => {
@@ -16,9 +19,9 @@ const TopNav = () => {
                 <img src={logo} alt="" height='60px' />
 
                 {/* =================== search field ======================== */}
-                <Box style={searchContainer} sx={{ display: { xs: 'none', md: 'block' } }}>
+                <Box style={searchContainer} sx={visibility}>
                     <Flex>
-                        <SearchIcon sx={{ color: '#6c757d', fontSize: '26px' }} />
+                        <SearchIcon sx={searchIcon} />
                         <input style={inputStyle} type="text" placeholder='Search for Items' />
                     </Flex>
                 </Box>
@@ -26,11 +29,37 @@ const TopNav = () => {
                 {/* ==================== badges ===================== */}
                 <Box>
                     <ThemeProvider theme={theme}>
-                        <Badge badgeContent={4} color="neutral">
-                            <AiOutlineShoppingCart style={iconStyle} />
-                        </Badge>
+                        <Flex justify='space-evenly'>
+                            <Flex>
+                                <Badge badgeContent={4} color="neutral">
+                                    <AiOutlineShoppingCart style={iconStyle} />
+                                </Badge>
+                                <Box sx={visibility}>
+                                    <p style={badgetext}>Cart</p>
+                                </Box>
+                            </Flex>
+                            <Flex>
+                                <Badge badgeContent={4} color="neutral">
+                                    <IoIosHeartEmpty style={iconStyle} />
+                                </Badge>
+                                <Box sx={visibility}>
+                                    <p style={badgetext}>Wishlist</p>
+                                </Box>
+
+                            </Flex>
+                            <Flex>
+                                <Box color="neutral">
+                                    <BsPerson style={iconStyle} />
+                                </Box>
+                                <Box sx={visibility}>
+                                    <p style={badgetext}>Account</p>
+                                </Box>
+
+                            </Flex>
+                        </Flex>
+
                     </ThemeProvider>
-                    
+
                 </Box>
 
             </Flex>

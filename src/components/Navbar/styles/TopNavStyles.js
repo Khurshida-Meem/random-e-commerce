@@ -20,10 +20,24 @@ export const searchContainer = {
 
 export const iconStyle = {
     fontSize: '30px',
-    color: 'var(--color-gray)'
+    color: 'var(--color-gray)',
+    marginLeft: '10px'
 }
 
-// badge style
+export const searchIcon = {
+    color: 'var(--color-gray)',
+    fontSize: '26px'
+}
+
+// badges text
+
+export const badgetext = {
+    color: 'var(--color-gray)',
+    marginLeft: '5px',
+    
+}
+
+// badge style using custom theme
 export const theme = createTheme({
     palette: {
         neutral: {
