@@ -14,10 +14,16 @@ import { visibility } from '../../Element.style';
 
 const TopNav = () => {
     return (
-        <Container sx={{ mt: '20px' }}>
+        <Container sx={{ my: '20px' }}>
             <Flex justify='space-evenly'>
-                <img src={logo} alt="" height='60px' />
 
+                <Box sx={{display: { xs: 'block', md: 'none' }}}>
+                    <img src={logo} alt="" width='120px' />
+                </Box>
+                <Box sx={{display: { xs: 'none', md: 'block' }}}>
+                    <img src={logo} alt=""  />
+                </Box>
+                    
                 {/* =================== search field ======================== */}
                 <Box style={searchContainer} sx={visibility}>
                     <Flex>
@@ -47,15 +53,18 @@ const TopNav = () => {
                                 </Box>
 
                             </Flex>
-                            <Flex>
-                                <Box color="neutral">
-                                    <BsPerson style={iconStyle} />
-                                </Box>
-                                <Box sx={visibility}>
-                                    <p style={badgetext}>Account</p>
-                                </Box>
+                            <Box sx={visibility}>
+                                <Flex >
+                                    <Box color="neutral">
+                                        <BsPerson style={iconStyle} />
+                                    </Box>
+                                    <Box>
+                                        <p style={badgetext}>Account</p>
+                                    </Box>
 
-                            </Flex>
+                                </Flex>
+                            </Box>
+
                         </Flex>
 
                     </ThemeProvider>
