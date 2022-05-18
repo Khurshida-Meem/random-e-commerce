@@ -10,8 +10,10 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { menubar } from './styles/BottomNavStyles';
+import { Flex } from '../../Element.styled';
+import CategoryButton from './CategoryButton';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Deals', 'Home', 'About', 'Shop', 'Vendors', 'Blog'];
 
 const BottomNav = () => {
 
@@ -20,17 +22,17 @@ const BottomNav = () => {
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-    
+
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
 
-   
+
     return (
         <AppBar position="static" sx={menubar}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                   
+
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
@@ -38,7 +40,7 @@ const BottomNav = () => {
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
-                            sx={{mt: '-140px'}}
+                            sx={{ mt: '-140px' }}
                         >
                             <MenuIcon />
                         </IconButton>
@@ -69,18 +71,27 @@ const BottomNav = () => {
                     </Box>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'var(--color-text)', display: 'block', fontWeight: '700' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                        <Flex>
+                            <Box sx={{ml: '10px'}}>
+                                <CategoryButton />
+                            </Box>
+                            <Box sx={{ display: 'flex', ml: '150px' }}>
+                                {pages.map((page) => (
+                                    <Button
+                                        key={page}
+                                        onClick={handleCloseNavMenu}
+                                        sx={{ my: 2, color: 'var(--color-text)', display: 'block', fontWeight: '700' }}
+                                    >
+                                        {page}
+                                    </Button>
+                                ))}
+                            </Box>
+                        </Flex>
+
                     </Box>
 
-                    
+
+
                 </Toolbar>
             </Container>
         </AppBar>
