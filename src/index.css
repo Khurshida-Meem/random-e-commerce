@@ -9,6 +9,10 @@
     --color-text: #253D4E;
 }
 
+body{
+    background-color: rgb(43, 43, 43);
+}
+
 * {
     margin: 0;
     padding: 0;

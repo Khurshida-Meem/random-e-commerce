@@ -7,13 +7,39 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { menubar } from './styles/BottomNavStyles';
+import { menubar, navlinks } from './styles/BottomNavStyles';
 import { Flex } from '../../Element.styled';
 import CategoryButton from './CategoryButton';
+import { NavLink } from 'react-router-dom';
+import img from '../../assets/icon-headphone (1).svg'
 
-const pages = ['Deals', 'Home', 'About', 'Shop', 'Vendors', 'Blog'];
+const links = [
+    {
+        name: 'Home',
+        path: '/'
+    },
+    {
+        name: 'Deals',
+        path: '/deals'
+    },
+    {
+        name: 'About',
+        path: '/about'
+    },
+    {
+        name: 'Shop',
+        path: '/shop'
+    },
+    {
+        name: 'Vendors',
+        path: '/vendors'
+    },
+    {
+        name: 'Blogs',
+        path: '/blogs'
+    },
+]
 
 const BottomNav = () => {
 
@@ -62,9 +88,9 @@ const BottomNav = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                            {links.map((page) => (
+                                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">{page.name}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -72,22 +98,36 @@ const BottomNav = () => {
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         <Flex>
-                            <Box sx={{ml: '10px'}}>
+                            <Box sx={{ ml: '10px' }}>
                                 <CategoryButton />
                             </Box>
                             <Box sx={{ display: 'flex', ml: '150px' }}>
-                                {pages.map((page) => (
-                                    <Button
-                                        key={page}
-                                        onClick={handleCloseNavMenu}
-                                        sx={{ my: 2, color: 'var(--color-text)', display: 'block', fontWeight: '700' }}
-                                    >
-                                        {page}
-                                    </Button>
-                                ))}
+                                {
+                                    links.map(link => (
+                                        <NavLink
+                                            style={navlinks}
+                                            activeStyle={{
+                                                color: 'var(--color-primary)'
+                                            }}
+                                            key={link.name}
+                                            to={link.path}
+                                            onClick={handleCloseNavMenu}>
+                                            {link.name}
+                                        </NavLink>
+                                    ))
+                                }
+
+
+                            </Box>
+
+                        </Flex>
+                        <Flex style={{marginLeft: 'auto'}}>
+                            <img src={img} alt="" />
+                            <Box>
+                                <h2 style={{ color: 'var(--color-primary)' }}>1234-5678</h2>
+                                <small style={{ color: 'var(--color-gray)' }}>24/7 Support Center</small>
                             </Box>
                         </Flex>
-
                     </Box>
 
 
