@@ -1,0 +1,28 @@
+.banner-slider{
+    
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    border-radius: 20px;
+}
+
+.slider-1{
+    background-image: url('../../../assets/slider-3.png');
+}
+.slider-2{
+    background-image: url('../../../assets/slider-4.png');
+}
+
+.slick-dots li button:before {
+    color: var(--color-primary) !important;
+    font-size: 10px !important;
+}
+
+
+.slick-prev:before,
+.slick-next:before {
+  color: var(--color-primary);
+  font-size: 24px;
+}
