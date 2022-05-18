@@ -4,37 +4,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import logo from '../../assets/logo.svg'
 import { Flex } from '../../Element.style';
 import Badge from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { ThemeProvider } from '@mui/material/styles';
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { iconStyle, inputStyle, searchContainer, theme } from './styles/TopNavStyles';
 
-
-// search field style
-const inputStyle = {
-    outline: 'none',
-    border: '0px',
-    borderLeft: '2px solid #6c757d',
-    padding: '0 8px',
-    marginLeft: '4px',
-    fontSize: '16px'
-}
-
-// search container
-const searchContainer = {
-    border: '2px solid #BCE3C9',
-    padding: '5px 20px',
-    borderRadius: '4px'
-}
-
-// badge style
-const StyledBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-      right: -3,
-      top: 13,
-      border: `2px solid ${theme.palette.background.paper}`,
-      padding: '0 4px',
-    },
-  }));
 
 const TopNav = () => {
     return (
@@ -52,8 +25,14 @@ const TopNav = () => {
 
                 {/* ==================== badges ===================== */}
                 <Box>
-
+                    <ThemeProvider theme={theme}>
+                        <Badge badgeContent={4} color="neutral">
+                            <AiOutlineShoppingCart style={iconStyle} />
+                        </Badge>
+                    </ThemeProvider>
+                    
                 </Box>
+
             </Flex>
         </Container>
     );
