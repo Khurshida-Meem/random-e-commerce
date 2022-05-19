@@ -5,7 +5,6 @@ import { BannerH1, Bannerp, buttonStyle, iconStyle, inputContainer, inputStyle }
 import { FiSend } from "react-icons/fi";
 
 
-
 const SlideContent = (props) => {
 
     const { heading, paragraph } = props

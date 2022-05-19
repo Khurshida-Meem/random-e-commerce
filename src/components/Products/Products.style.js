@@ -18,3 +18,4 @@ export const CategoryButton = styled.button`
     }
 
 `;
+

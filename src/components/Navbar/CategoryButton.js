@@ -48,7 +48,7 @@ const CategoryButton = () => {
                     onClick={handleToggle}
                 >
                     <Flex>
-                        <p>All Categories</p>
+                        <p style={{color: 'var(--color-white)'}}>All Categories</p>
                         <ArrowDropDownIcon />
                     </Flex>
                     

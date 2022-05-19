@@ -42,5 +42,20 @@ export const Flex = styled.div`
     display: flex;
     align-items: center;
     justify-content: ${(props) => props.justify};
-`
+`;
+
+export const CardCustom = styled.div`
+text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  padding: 16px;
+  transition: 0.3s;
+
+  &:hover
+  {
+    border: 1px solid var(--color-primary);
+    box-shadow: 5px 5px 15px rgb(0 0 0 / 5%);
+    
+  }
+`;
 
