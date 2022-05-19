@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useData from '../../hooks/useData'
 import Product from './Product';
 import { CategoryButton } from './Products.style';
@@ -20,7 +20,17 @@ const Products = () => {
 
     const allProducts = useData('https://raw.githubusercontent.com/Khurshida-Meem/fake-Datas/main/e-commerce/products');
 
-    // console.log(allProducts);
+
+    useEffect((() => {
+        setProducts(allProducts.slice(0, 6));
+    }), [allProducts])
+
+    const handleCategoryClick = category => {
+        const productcategorized = allProducts.filter(product => product.category === category);
+        category==='All'? setProducts(allProducts.slice(0, 6)) : setProducts(productcategorized);
+        
+    }
+
 
     return (
         <Container sx={{ mt: '100px' }}>
@@ -31,7 +41,7 @@ const Products = () => {
                 <Box>
                     {
                         buttons.map(button => (
-                            <CategoryButton key={button}>{button}</CategoryButton>
+                            <CategoryButton onClick={() => handleCategoryClick(button)} key={button}>{button}</CategoryButton>
                         ))
                     }
                 </Box>
@@ -41,9 +51,9 @@ const Products = () => {
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={2}>
                         {
-                            allProducts.map(product => (
-                                <Grid item xs={12} md={4}>
-                                    <Product key={product.key} product={product} />
+                            products.map(product => (
+                                <Grid key={product.key} item xs={12} md={4}>
+                                    <Product product={product} />
                                 </Grid>
                             ))
                         }
