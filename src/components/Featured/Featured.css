@@ -1,0 +1,17 @@
+.featured-bg-1{
+    background-image: url('../../assets/banner-1.png');
+}
+.featured-bg-2{
+    background-image: url('../../assets/banner-2.png');
+}
+.featured-bg-3{
+    background-image: url('../../assets/banner-3.png');
+}
+
+.featured-bg{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 10px;
+    height: 200px;
+    width: 400px;
+}

@@ -19,15 +19,12 @@ const Banner = () => {
                         </Grid>
                         <Grid sx={{ display: { xs: 'none', md: 'block' } }} item lg={4}>
                             <div style={{ padding: '30px' }} className='bg-right'>
-                                <div className='banner-button-container'>
-                                    <h1 style={{color: 'var(--color-text)', margin: '30px auto 20px auto'}}>Delivered to <span style={{color: 'var(--color-primary)'}}>your home</span></h1>
-                                    <ButtonSecondary padding='6px 14px' radius='3px'>
-                                        <Flex>
-                                            <span>Shop Now </span><BsArrowRightShort className='arrow' />
-                                        </Flex>
-                                    </ButtonSecondary>
-                                </div>
-
+                                <h1 style={{ color: 'var(--color-text)', margin: '30px auto 20px auto' }}>Delivered to <span style={{ color: 'var(--color-primary)' }}>your home</span></h1>
+                                <ButtonSecondary className='banner-button-container' padding='6px 14px' radius='3px'>
+                                    <Flex>
+                                        <span>Shop Now </span><BsArrowRightShort className='arrow' />
+                                    </Flex>
+                                </ButtonSecondary>
                             </div>
                         </Grid>
 

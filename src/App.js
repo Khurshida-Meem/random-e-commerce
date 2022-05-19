@@ -10,11 +10,11 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/'>
-<Home />
+            <Home />
           </Route>
         </Switch>
       </Router>
-      
+
     </>
   );
 }

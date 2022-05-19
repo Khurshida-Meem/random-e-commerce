@@ -26,3 +26,8 @@
     height: 60vh;
     border-radius: 20px;
 }
+
+::selection {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+  }
