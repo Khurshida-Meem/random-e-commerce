@@ -7,6 +7,7 @@
     --color-search-border: #BCE3C9;
     --color-white: #fff;
     --color-text: #253D4E;
+    --color-yellow: #FDC040;
 }
 
 
@@ -14,4 +15,13 @@
     margin: 0;
     padding: 0;
     font-family: 'Quicksand', sans-serif;
+}
+
+.img-bg{
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    border-radius: 20px;
 }

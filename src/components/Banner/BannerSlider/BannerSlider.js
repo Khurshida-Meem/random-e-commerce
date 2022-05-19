@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick-theme.css";
 import './BannerSlider.css'
-import { BannerH1, Bannerp } from './BannerSlider.style';
+import SlideContent from './SlideContent';
 
 
 const BannerSlider = () => {
@@ -21,13 +21,18 @@ const BannerSlider = () => {
     return (
         <Box sx={{ p: '30px' }}>
             <Slider {...settings}>
-                <div className='banner-slider slider-1'>
-                    <BannerH1>Snacks Box <br /> Daily Save</BannerH1>
-                    <Bannerp>Signup for the daily newsletter</Bannerp>
+                <div className='img-bg slider-1'>
+                    <SlideContent
+                        heading={'Snacks Box Daily Save'}
+                        paragraph={'Signup for the daily newsletter'}
+                    />
                 </div>
-                <div className='banner-slider slider-2'>
-                    <BannerH1>Pure Coffee <br /> Big Discount</BannerH1>
-                    <Bannerp>Save upto 50% on your first order</Bannerp>
+                <div className='img-bg slider-2'>
+                <SlideContent
+                        heading={'Pure Coffee Big Discount'}
+                        paragraph={'Save upto 50% on your first order'}
+                    />
+                    
                 </div>
 
             </Slider>

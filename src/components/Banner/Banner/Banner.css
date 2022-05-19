@@ -5,3 +5,27 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+.bg-right{
+    background-image: url('../../../assets/banner-11.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    border-radius: 20px;
+}
+
+.arrow{
+    font-size: 20px;
+    margin-left: 3px;
+    transition: 0.3s;
+}
+
+.banner-button-container{
+    position: relative;
+}
+
+.banner-button-container:hover .arrow{
+    margin-left: 10px;
+}

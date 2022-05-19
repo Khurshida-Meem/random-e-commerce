@@ -1,11 +1,13 @@
 import { Box, Container, Grid } from '@mui/material';
 import React from 'react';
 import BannerSlider from '../BannerSlider/BannerSlider';
+import { BsArrowRightShort } from "react-icons/bs";
 import './Banner.css'
+import { ButtonSecondary, Flex } from '../../../Element.styled';
 
 const Banner = () => {
     return (
-        <div style={{marginTop: '50px'}} className='banner-bg'>
+        <div style={{ marginTop: '50px' }} className='banner-bg'>
             <Container>
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={2}>
@@ -16,7 +18,16 @@ const Banner = () => {
 
                         </Grid>
                         <Grid sx={{ display: { xs: 'none', md: 'block' } }} item lg={4}>
-                            asdf
+                            <div style={{ padding: '30px' }} className='bg-right'>
+                                <div className='banner-button-container'>
+                                    <ButtonSecondary padding='6px 14px' radius='3px'>
+                                        <Flex>
+                                            <span>Shop Now </span><BsArrowRightShort className='arrow' />
+                                        </Flex>
+                                    </ButtonSecondary>
+                                </div>
+
+                            </div>
                         </Grid>
 
                     </Grid>
