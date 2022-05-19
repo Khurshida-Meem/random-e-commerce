@@ -45,11 +45,11 @@ export const Flex = styled.div`
 `;
 
 export const CardCustom = styled.div`
-text-align: center;
   border: 1px solid lightgray;
   border-radius: 15px;
   padding: 16px;
   transition: 0.3s;
+  margin: 20px 20px 20px 0;
 
   &:hover
   {

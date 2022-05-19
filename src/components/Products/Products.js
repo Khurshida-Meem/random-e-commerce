@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import useData from '../../hooks/useData'
 import Product from './Product';
@@ -37,7 +37,21 @@ const Products = () => {
                 </Box>
             </Box>
             <Box>
-                <Product />
+
+                <Box sx={{ flexGrow: 1 }}>
+                    <Grid container spacing={2}>
+                        {
+                            allProducts.map(product => (
+                                <Grid item xs={12} md={4}>
+                                    <Product key={product.key} product={product} />
+                                </Grid>
+                            ))
+                        }
+                    </Grid>
+                </Box>
+
+
+
             </Box>
         </Container>
     );
