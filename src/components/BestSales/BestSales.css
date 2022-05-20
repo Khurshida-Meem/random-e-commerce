@@ -1,3 +1,7 @@
 .right-bg{
     background-image: url('../../assets/pata.png');
 }
+
+.label {
+    display: none;
+  }

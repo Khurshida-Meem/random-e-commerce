@@ -5,7 +5,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 
 const LeftCompo = () => {
     return (
-        <div style={{ padding: '30px' }} className='right-bg img-bg-small'>
+        <div style={{ padding: '30px', width: '60%' }} className='right-bg img-bg-small'>
         <h1 style={{ color: 'var(--color-text)', margin: '30px auto 20px auto' }}>Bring nature into your home</h1>
             <ButtonSecondary
                 style={{marginTop: '20px'}}

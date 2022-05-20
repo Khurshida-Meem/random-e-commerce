@@ -11,6 +11,7 @@ export const PrimaryButton = styled.button`
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
+    margin-top: ${(props) => props.marginTop};
 
     &:hover,
   &:focus,
@@ -64,6 +65,8 @@ export const CardCustom = styled.div`
   padding: 16px;
   transition: 0.3s;
   margin: 0 20px 20px 0;
+  min-height: ${(props) => props.height};
+  max-width: ${(props) => props.width};
 
   &:hover
   {
