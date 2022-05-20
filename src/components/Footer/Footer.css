@@ -1,0 +1,9 @@
+.links{
+    margin-bottom: 20px !important;
+    transition: 0.3s;
+}
+
+.links:hover{
+    margin-left: 8px;
+    cursor: pointer;
+}

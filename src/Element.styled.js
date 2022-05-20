@@ -75,3 +75,11 @@ export const CardCustom = styled.div`
   }
 `;
 
+export const FooterCompo = styled.div`
+color: var(--color-text);
+
+&:hover{
+  color: var(--color-primary);
+}
+`
+
