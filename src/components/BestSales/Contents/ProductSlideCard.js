@@ -10,11 +10,10 @@ const ProductSlideCard = (props) => {
     const { image, category, title, rating, price, available, sold } = props.product;
 
     return (
-        <div>
+        <div style={{marginLeft: '10px'}}>
             <CardCustom
                 style={{margin: '0'}}
                 height='400px'
-                width='200px'
             >
                 <Box sx={{ textAlign: 'center' }}>
                     <img src={image} alt="" height='150px' />

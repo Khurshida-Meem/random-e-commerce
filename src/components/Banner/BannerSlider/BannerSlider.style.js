@@ -19,8 +19,8 @@ export const iconStyle = {
 }
 export const inputContainer = {
     backgroundColor: 'var(--color-white)',
-    padding: '16px 24px',
-    borderRadius: '50px'
+    padding: {xs: '16px 5px', md: '16px 24px'},
+    borderRadius: '50px',
 }
 
 export const inputStyle = {

@@ -33,35 +33,35 @@ const Products = () => {
 
 
     return (
-        <Container sx={{ mt: '100px' }}>
-            <Box sx={flexible}>
-                <Typography sx={{ color: 'var(--color-text)', fontWeight: '700' }} variant="h4" gutterBottom component="div">
-                    Popular Products
-                </Typography>
-                <Box>
-                    {
-                        buttons.map(button => (
-                            <CategoryButton onClick={() => handleCategoryClick(button)} key={button}>{button}</CategoryButton>
-                        ))
-                    }
-                </Box>
-            </Box>
+        <Container sx={{ mt: '100px', display: 'flex', justifyContent: 'center' }}>
             <Box>
-
-                <Box sx={{ flexGrow: 1, mt: '30px' }}>
-                    <Grid container spacing={2}>
+                <Box sx={flexible}>
+                    <Typography sx={{ color: 'var(--color-text)', fontWeight: '700' }} variant="h4" gutterBottom component="div">
+                        Popular Products
+                    </Typography>
+                    <Box>
                         {
-                            products.map(product => (
-                                <Grid key={product.key} item xs={12} md={4}>
-                                    <Product product={product} />
-                                </Grid>
+                            buttons.map(button => (
+                                <CategoryButton onClick={() => handleCategoryClick(button)} key={button}>{button}</CategoryButton>
                             ))
                         }
-                    </Grid>
+                    </Box>
                 </Box>
+                <Box>
 
+                    <Box sx={{ flexGrow: 1, mt: '30px' }}>
+                        <Grid container spacing={2}>
+                            {
+                                products.map(product => (
+                                    <Grid key={product.key} item xs={12} md={4}>
+                                        <Product product={product} />
+                                    </Grid>
+                                ))
+                            }
+                        </Grid>
+                    </Box>
 
-
+                </Box>
             </Box>
         </Container>
     );

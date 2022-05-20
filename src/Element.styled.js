@@ -64,7 +64,6 @@ export const CardCustom = styled.div`
   border-radius: 15px;
   padding: 16px;
   transition: 0.3s;
-  margin: 0 20px 20px 0;
   min-height: ${(props) => props.height};
   max-width: ${(props) => props.width};
 
