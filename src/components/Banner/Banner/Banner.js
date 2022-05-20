@@ -18,7 +18,7 @@ const Banner = () => {
 
                         </Grid>
                         <Grid sx={{ display: { xs: 'none', md: 'block' } }} item lg={4}>
-                            <div style={{ padding: '30px' }} className='bg-right'>
+                            <div style={{ padding: '30px' }} className='bg-right img-bg-small'>
                                 <h1 style={{ color: 'var(--color-text)', margin: '30px auto 20px auto' }}>Delivered to <span style={{ color: 'var(--color-primary)' }}>your home</span></h1>
                                 <ButtonSecondary className='banner-button-container' padding='6px 14px' radius='3px'>
                                     <Flex>

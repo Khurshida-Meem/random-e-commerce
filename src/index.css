@@ -36,6 +36,13 @@ p,small{
     border-radius: 20px;
 }
 
+.img-bg-small{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 60vh;
+    border-radius: 20px;
+}
+
 ::selection {
     color: var(--color-white);
     background-color: var(--color-primary);
