@@ -17,7 +17,14 @@ const SlideContent = (props) => {
                     <FiSend style={iconStyle} />
                     <input style={inputStyle} type="text" placeholder="Your email address" />
                 </Box>
-                <PrimaryButton radius='50px' style={buttonStyle}>Subscribe</PrimaryButton>
+                <PrimaryButton
+                    bg='var(--color-primary)'
+                    padding='10px 20px'
+                    color='var(--color-white)'
+                    radius='50px'
+                    fSize='16px'
+                    hoverBg='var(--color-button-hover)'
+                    style={buttonStyle}>Subscribe</PrimaryButton>
             </Flex>
             
             

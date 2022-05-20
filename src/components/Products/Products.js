@@ -27,8 +27,8 @@ const Products = () => {
 
     const handleCategoryClick = category => {
         const productcategorized = allProducts.filter(product => product.category === category);
-        category==='All'? setProducts(allProducts.slice(0, 6)) : setProducts(productcategorized);
-        
+        category === 'All' ? setProducts(allProducts.slice(0, 6)) : setProducts(productcategorized);
+
     }
 
 
@@ -48,7 +48,7 @@ const Products = () => {
             </Box>
             <Box>
 
-                <Box sx={{ flexGrow: 1 }}>
+                <Box sx={{ flexGrow: 1, mt: '30px' }}>
                     <Grid container spacing={2}>
                         {
                             products.map(product => (

@@ -1,21 +1,23 @@
 import styled from 'styled-components';
 
 export const PrimaryButton = styled.button`
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    padding: 10px 20px;
+    background-color: ${(props) => props.bg};
+    color: ${(props) => props.color};
+    padding: ${(props) => props.padding};
     border-radius: ${(props) => props.radius};
     outline: none;
     border: none;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: ${(props) => props.fSize};
+    font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
 
     &:hover,
   &:focus,
   &:active {
-    background-color: var(--color-button-hover);
+    background-color: ${(props) => props.hoverBg};
+    color: ${(props) => props.hoverColor};
+    margin-top: ${(props) => props.mt};
   }
 `;
 
@@ -36,7 +38,19 @@ export const ButtonSecondary = styled.button`
     &:active {
       background-color: var(--color-yellow);
   }
-` 
+`;
+
+// export const CartButton = styled.button`
+//   background-color: var(--color-light);
+//   padding: 6px 20px 6px 20px;
+//   border-radius: 4px;
+//   border: none;
+//   outline: none;
+//   color: var(--color-primary);
+//   font-size: 14px;
+//   font-weight: 700;
+//   cursor: pointer;
+// `;
 
 export const Flex = styled.div`
     display: flex;

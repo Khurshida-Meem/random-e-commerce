@@ -40,7 +40,12 @@ const CategoryButton = () => {
         <React.Fragment>
             <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
                 <PrimaryButton
+                    bg='var(--color-primary)'
+                    padding='10px 20px'
+                    color='var(--color-white)'
                     radius='5px'
+                    fSize='16px'
+                    hoverBg='var(--color-button-hover)'
                     aria-controls={open ? 'split-button-menu' : undefined}
                     aria-expanded={open ? 'true' : undefined}
                     aria-label="select merge strategy"
