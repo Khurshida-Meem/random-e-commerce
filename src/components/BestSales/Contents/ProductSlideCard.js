@@ -13,7 +13,7 @@ const ProductSlideCard = (props) => {
         <div>
             <CardCustom
                 style={{margin: '0'}}
-                height='350px'
+                height='400px'
                 width='200px'
             >
                 <Box sx={{ textAlign: 'center' }}>
@@ -22,6 +22,7 @@ const ProductSlideCard = (props) => {
                 <p style={{ fontSize: '14px' }}>{category}</p>
                 <h4 style={{ margin: '8px 0' }}>{title}</h4>
                 <Rating name="read-only" value={rating} readOnly />
+                <h2 style={{color: 'var(--color-primary)', margin: '8px 0'}}>${price}</h2>
 
                 <ProgressBar
                     completed={sold}
@@ -32,7 +33,7 @@ const ProductSlideCard = (props) => {
                     labelClassName="label"
                     animateOnRender
                 />
-                <h2>${price}</h2>
+                <small>Sold:{sold}/{available}</small>
                 <Box style={{marginTop: '24px', textAlign:'center'}}>
                     <PrimaryButton
                     bg='var(--color-primary)'
