@@ -4,8 +4,35 @@ import './Footer.css';
 import logo from '../../assets/logo.svg'
 import { FooterCompo } from '../../Element.styled';
 
-const links = ['Home', 'Services', 'About Us', 'Our Team', 'Contacts'];
-const socialLinks = ['Facebook', 'Twitter', 'Dribble', 'Instagram'];
+const company = [
+    'About Us',
+    'Delivery Information',
+    'Privacy Policy',
+    'Terms & Conditions',
+    'Contact Us',
+    'Support Center',
+    'Careers'
+];
+const account = [
+    'Sign In',
+    'View Cart',
+    'My Wishlist',
+    'Track My Order',
+    'Help Ticket',
+    'Shipping Details',
+    'Compare Products'
+    
+];
+
+const corporate = [
+    'Become a Vendor',
+    'Affiliate Program',
+    'Farm Business',
+    'Farm Careers',
+    'Our Suppliers',
+    'Accessibility',
+    'Promotions'
+]
 
 const Footer = () => {
     return (
@@ -29,14 +56,16 @@ const Footer = () => {
                     </Grid>
                     <Grid item sm={12} md={3} sx={{ textAlign: 'center' }}>
                         <Typography sx={{ color: 'var(--color-text)', fontWeight: '700', mb: '20px' }} variant="h6" component="div" gutterBottom>
-                            Links
+                            Company
                         </Typography>
 
                         {
-                            links.map(link => (
+                            company.map(link => (
                                 <Box>
                                     <Typography className='links' sx={{ color: '#787C8B' }} variant="p" component="div" gutterBottom>
-                                        {link}
+                                        <FooterCompo>
+                                            {link}
+                                        </FooterCompo>
                                     </Typography>
                                     <div className='border'></div>
                                 </Box>
@@ -46,11 +75,11 @@ const Footer = () => {
                     </Grid>
                     <Grid item sm={12} md={3} sx={{ textAlign: 'center' }}>
                         <Typography sx={{ color: 'var(--color-text)', fontWeight: '700', mb: '20px' }} variant="h6" component="div" gutterBottom>
-                            Socials
+                            Account
                         </Typography>
 
                         {
-                            socialLinks.map(link => (
+                            account.map(link => (
                                 <Box>
                                     <Typography className='links' sx={{ color: '#787C8B' }} variant="p" component="div" gutterBottom>
                                         <FooterCompo>
@@ -65,7 +94,24 @@ const Footer = () => {
                         }
                     </Grid>
                     <Grid item sm={12} md={3} sx={{ textAlign: 'center' }}>
+                    <Typography sx={{ color: 'var(--color-text)', fontWeight: '700', mb: '20px' }} variant="h6" component="div" gutterBottom>
+                            Corporate
+                        </Typography>
 
+                        {
+                            corporate.map(link => (
+                                <Box>
+                                    <Typography className='links' sx={{ color: '#787C8B' }} variant="p" component="div" gutterBottom>
+                                        <FooterCompo>
+                                            {link}
+                                        </FooterCompo>
+                                        
+                                    </Typography>
+                                    <div className='border'></div>
+                                </Box>
+
+                            ))
+                        }
                     </Grid>
                 </Grid>
                 <Box>

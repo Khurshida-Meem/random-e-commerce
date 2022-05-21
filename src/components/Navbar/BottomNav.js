@@ -100,6 +100,7 @@ const BottomNav = () => {
                         <Flex>
                             <Box sx={{ ml: '10px' }}>
                                 <CategoryButton />
+                                
                             </Box>
                             <Box sx={{ display: 'flex', ml: '150px' }}>
                                 {
@@ -121,7 +122,7 @@ const BottomNav = () => {
                             </Box>
 
                         </Flex>
-                        <Flex style={{marginLeft: 'auto'}}>
+                        <Flex style={{ marginLeft: 'auto' }}>
                             <img src={img} alt="" />
                             <Box>
                                 <h2 style={{ color: 'var(--color-primary)' }}>1234-5678</h2>
