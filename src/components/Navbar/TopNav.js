@@ -36,7 +36,7 @@ const TopNav = () => {
                 <Box>
                     <ThemeProvider theme={theme}>
                         <Flex justify='space-evenly'>
-                            <Flex>
+                            <Flex style={{cursor: 'pointer'}}>
                                 <Badge badgeContent={4} color="neutral">
                                     <AiOutlineShoppingCart style={iconStyle} />
                                 </Badge>
