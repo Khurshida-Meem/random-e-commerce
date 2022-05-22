@@ -18,7 +18,7 @@ const Product = (props) => {
             id: key,
             name: title,
             amount: 1,
-            price: productPrice
+            price
         })
     }
 

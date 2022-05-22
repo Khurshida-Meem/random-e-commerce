@@ -1,8 +1,23 @@
 import { Box, ButtonGroup } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Flex, PrimaryButton } from '../../Element.styled';
+import CartContext from '../../store/cart-context';
 
 const CartItem = ({ item }) => {
+
+    const cartContext = useContext(CartContext);
+
+    let total = (item.amount * item.price).toFixed(2);
+
+
+    const cartItemRemoveHandler = id => {
+        cartContext.removeItem(id);
+    }
+
+    const cartItemHandler = item => {
+        cartContext.addItem({ ...item, amount: 1 })
+    }
+
     return (
         <div style={{padding: '5px 0'}}>
             <Box sx={{
@@ -15,7 +30,7 @@ const CartItem = ({ item }) => {
                     <Box sx={{ml: '8px', width: '70%'}}>
                         <h3>{item.name}</h3>
                         <h2>{item.price}</h2>
-                        <h3 style={{ color: 'var(--color-primary)' }}>x 1</h3>
+                        <h3 style={{ color: 'var(--color-primary)' }}>x {item.amount}</h3>
                     </Box>
                 </Flex>
                 <Box sx={{
@@ -32,6 +47,7 @@ const CartItem = ({ item }) => {
                             fSize='20px'
                             hoverBg='var(--color-primary)'
                             hoverColor='var(--color-white)'
+                            onClick={cartItemHandler.bind(null, item)}
                         >
                             +
                         </PrimaryButton>
@@ -43,13 +59,13 @@ const CartItem = ({ item }) => {
                             fSize='20px'
                             hoverBg='var(--color-primary)'
                             hoverColor='var(--color-white)'
+                            onClick={cartItemRemoveHandler.bind(null, item.id)}
                         >
                             -
                         </PrimaryButton>
                     </ButtonGroup>
-                    <Box sx={{ display: { md: 'none' } }}><h2>{item.price}</h2></Box>
+                    <Box ><h2>${total}</h2></Box>
                 </Box>
-                <Box sx={{ display: { xs: 'none', md: 'block' } }}><h2>{item.price}</h2></Box>
             </Box>
             <hr />
 

@@ -8,6 +8,8 @@ const CartDialog = (props) => {
 
     const cartContext = useContext(CartContext);
     const { items } = cartContext;
+    const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`;
+
 
     const descriptionElementRef = React.useRef(null);
     useEffect(() => {
@@ -52,7 +54,7 @@ const CartDialog = (props) => {
                         <Typography sx={{ fontWeight: '700' }} id="keep-mounted-modal-title" variant="h6" component="h2">
                             Sub Total
                         </Typography>
-                        <Box><h2>$45.20</h2></Box>
+                        <Box><h2>{totalAmount}</h2></Box>
                     </Flex>
                 </DialogContent>
                 <DialogActions>

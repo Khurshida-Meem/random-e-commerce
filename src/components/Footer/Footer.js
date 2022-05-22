@@ -61,7 +61,7 @@ const Footer = () => {
 
                         {
                             company.map(link => (
-                                <Box>
+                                <Box key={link}>
                                     <Typography className='links' sx={{ color: '#787C8B' }} variant="p" component="div" gutterBottom>
                                         <FooterCompo>
                                             {link}
@@ -80,7 +80,7 @@ const Footer = () => {
 
                         {
                             account.map(link => (
-                                <Box>
+                                <Box key={link}>
                                     <Typography className='links' sx={{ color: '#787C8B' }} variant="p" component="div" gutterBottom>
                                         <FooterCompo>
                                             {link}
@@ -100,7 +100,7 @@ const Footer = () => {
 
                         {
                             corporate.map(link => (
-                                <Box>
+                                <Box key={link}>
                                     <Typography className='links' sx={{ color: '#787C8B' }} variant="p" component="div" gutterBottom>
                                         <FooterCompo>
                                             {link}

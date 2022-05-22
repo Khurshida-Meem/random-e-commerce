@@ -13,9 +13,7 @@ export const PrimaryButton = styled.button`
     transition: 0.3s;
     margin-top: ${(props) => props.marginTop};
 
-    &:hover,
-  &:focus,
-  &:active {
+    &:hover {
     background-color: ${(props) => props.hoverBg};
     color: ${(props) => props.hoverColor};
     margin-top: ${(props) => props.mt};
@@ -34,9 +32,7 @@ export const ButtonSecondary = styled.button`
     cursor: pointer;
     transition: 0.3s;
 
-    &:hover,
-    &:focus,
-    &:active {
+    &:hover {
       background-color: var(--color-yellow);
   }
 `;

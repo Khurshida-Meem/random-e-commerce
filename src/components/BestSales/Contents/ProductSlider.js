@@ -47,7 +47,7 @@ const ProductSlider = () => {
             <Slider {...settings}>
                 {
                     products.map(product => (
-                        <ProductSlideCard product={product} key={product.id }/>
+                        <ProductSlideCard product={product} key={product.key }/>
                     ))
                 }
             </Slider>
