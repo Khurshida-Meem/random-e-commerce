@@ -22,6 +22,10 @@ const CartDialog = (props) => {
         }
     }, [props.open]);
 
+    const handleClearCart = () => {
+        cartContext.clearCart();
+    }
+
     return (
         <div>
 
@@ -33,15 +37,15 @@ const CartDialog = (props) => {
                 aria-describedby="scroll-dialog-description"
             >
                 <DialogTitle id="scroll-dialog-title">
-                    <Box>
+                    {itemsLength ? <Box>
                         <Typography sx={{ fontWeight: '700' }} id="keep-mounted-modal-title" variant="h6" component="h2">
                             All Orders
                         </Typography>
-                    </Box>
+                    </Box> : ''}
                 </DialogTitle>
                 {
                     itemsLength === 0 ?
-                        <Box sx={{p: '5px 16px'}}>
+                        <Box sx={{ p: '5px 16px' }}>
                             <Typography sx={{ fontWeight: '700' }} id="keep-mounted-modal-title" variant="h6" component="h2">
                                 Cart is Empty
                             </Typography>
@@ -78,6 +82,20 @@ const CartDialog = (props) => {
                     >
                         Close
                     </PrimaryButton>
+                    {
+                        itemsLength ?
+                        <PrimaryButton
+                            bg='var(--color-primary)'
+                            padding='10px 20px'
+                            color='var(--color-white)'
+                            radius='5px'
+                            fSize='16px'
+                            hoverBg='var(--color-button-hover)'
+                            onClick={handleClearCart}
+                        >
+                            Clear Cart
+                        </PrimaryButton> : ''
+                    }
                 </DialogActions>
             </Dialog>
         </div>
