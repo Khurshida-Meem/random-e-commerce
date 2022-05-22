@@ -10,6 +10,7 @@ const CartDialog = (props) => {
     const { items } = cartContext;
     const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`;
 
+    let itemsLength = items.length;
 
     const descriptionElementRef = React.useRef(null);
     useEffect(() => {
@@ -38,25 +39,33 @@ const CartDialog = (props) => {
                         </Typography>
                     </Box>
                 </DialogTitle>
-                <DialogContent dividers='paper'>
-                    <DialogContentText
-                        id="scroll-dialog-description"
-                        ref={descriptionElementRef}
-                        tabIndex={-1}
-                    >
-                        {
-                            items.map(item => (
-                                <CartItem key={item.id} item={item} />
-                            ))
-                        }
-                    </DialogContentText>
-                    <Flex justify='space-between'>
-                        <Typography sx={{ fontWeight: '700' }} id="keep-mounted-modal-title" variant="h6" component="h2">
-                            Sub Total
-                        </Typography>
-                        <Box><h2>{totalAmount}</h2></Box>
-                    </Flex>
-                </DialogContent>
+                {
+                    itemsLength === 0 ?
+                        <Box sx={{p: '5px 16px'}}>
+                            <Typography sx={{ fontWeight: '700' }} id="keep-mounted-modal-title" variant="h6" component="h2">
+                                Cart is Empty
+                            </Typography>
+                        </Box>
+                        :
+                        <DialogContent dividers='paper'>
+                            <DialogContentText
+                                id="scroll-dialog-description"
+                                ref={descriptionElementRef}
+                                tabIndex={-1}
+                            >
+                                {
+                                    items.map(item => (
+                                        <CartItem key={item.id} item={item} />
+                                    ))
+                                }
+                            </DialogContentText>
+                            <Flex justify='space-between'>
+                                <Typography sx={{ fontWeight: '700' }} id="keep-mounted-modal-title" variant="h6" component="h2">
+                                    Sub Total
+                                </Typography>
+                                <Box><h2>{totalAmount}</h2></Box>
+                            </Flex>
+                        </DialogContent>}
                 <DialogActions>
                     <PrimaryButton
                         bg='var(--color-primary)'
