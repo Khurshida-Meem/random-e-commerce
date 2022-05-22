@@ -1,27 +1,20 @@
-import { Box, ButtonGroup, Typography } from '@mui/material';
+import { Box, ButtonGroup } from '@mui/material';
 import React from 'react';
-import pro1 from '../../assets/cat-11.png'
 import { Flex, PrimaryButton } from '../../Element.styled';
 
-const CartItem = () => {
+const CartItem = ({ item }) => {
     return (
-        <div>
-            <Box>
-                <Typography sx={{ fontWeight: '700' }} id="keep-mounted-modal-title" variant="h6" component="h2">
-                    All Orders
-                </Typography>
-            </Box>
-            <hr />
+        <div style={{padding: '5px 0'}}>
             <Box sx={{
                 display: { md: 'flex' },
                 alignItems: 'center',
                 justifyContent: 'space-between'
             }}>
                 <Flex>
-                    <img src={pro1} alt="" />
-                    <Box>
-                        <h3>Title</h3>
-                        <h2>$45.20</h2>
+                    <img src={item.image} alt="" height='50px' />
+                    <Box sx={{ml: '8px', width: '70%'}}>
+                        <h3>{item.name}</h3>
+                        <h2>{item.price}</h2>
                         <h3 style={{ color: 'var(--color-primary)' }}>x 1</h3>
                     </Box>
                 </Flex>
@@ -59,13 +52,6 @@ const CartItem = () => {
                 <Box sx={{ display: { xs: 'none', md: 'block' } }}><h2>$45.20</h2></Box>
             </Box>
             <hr />
-
-            <Flex justify='space-between'>
-                <Typography sx={{ fontWeight: '700' }} id="keep-mounted-modal-title" variant="h6" component="h2">
-                    Sub Total
-                </Typography>
-                <Box><h2>$45.20</h2></Box>
-            </Flex>            
 
         </div>
     );

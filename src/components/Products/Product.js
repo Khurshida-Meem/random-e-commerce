@@ -12,7 +12,7 @@ const Product = (props) => {
     const cartContext = useContext(CartContext);
     const productPrice = `$${price.toFixed(2)}`;
 
-    const addToCartHandler = amount => {
+    const addToCartHandler = () => {
         cartContext.addItem({
             image,
             id: key,
@@ -33,7 +33,7 @@ const Product = (props) => {
             <Rating name="read-only" value={rating} readOnly />
             <p style={{ marginTop: '8px' }}>By <span style={{ color: 'var(--color-primary)' }}>{vendor}</span></p>
             <Flex style={{ marginTop: '8px' }} justify='space-between'>
-                <h2>${productPrice}</h2>
+                <h2>{productPrice}</h2>
                 <PrimaryButton
                     bg='var(--color-light)'
                     padding='6px 20px 6px 20px'

@@ -1,6 +1,7 @@
-import { Box, Modal } from '@mui/material';
-import React from 'react';
-import { PrimaryButton } from '../../Element.styled';
+import { Box, Modal, Typography } from '@mui/material';
+import React, { useContext } from 'react';
+import { Flex, PrimaryButton } from '../../Element.styled';
+import CartContext from '../../store/cart-context';
 import CartItem from './CartItem';
 
 
@@ -18,13 +19,12 @@ const style = {
 
 const CartModal = (props) => {
 
-    // const [open, setOpen] = React.useState(true);
-    // const handleOpen = () => setOpen(true);
-    // const handleClose = () => setOpen(false);
+    const cartContext = useContext(CartContext);
+    const { items } = cartContext;
+
 
     return (
         <div>
-            {/* <Button onClick={handleOpen}>Open modal</Button> */}
             <Modal
                 keepMounted
                 open={props.open}
@@ -33,7 +33,23 @@ const CartModal = (props) => {
                 aria-describedby="keep-mounted-modal-description"
             >
                 <Box sx={style}>
-                    <CartItem />
+                    <Box>
+                        <Typography sx={{ fontWeight: '700' }} id="keep-mounted-modal-title" variant="h6" component="h2">
+                            All Orders
+                        </Typography>
+                    </Box>
+                    <hr />
+                    {
+                        items.map(item => (
+                            <CartItem key={item.id} item={item} />
+                        ))
+                    }
+                    <Flex justify='space-between'>
+                        <Typography sx={{ fontWeight: '700' }} id="keep-mounted-modal-title" variant="h6" component="h2">
+                            Sub Total
+                        </Typography>
+                        <Box><h2>$45.20</h2></Box>
+                    </Flex>
                     <Box>
                         <PrimaryButton
                             bg='var(--color-primary)'
