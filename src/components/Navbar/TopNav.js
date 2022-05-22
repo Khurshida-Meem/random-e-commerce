@@ -1,5 +1,5 @@
 import { Box, Container } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import logo from '../../assets/logo.svg'
 import { Flex } from '../../Element.styled';
@@ -10,9 +10,18 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { BsPerson } from "react-icons/bs";
 import { iconStyle, inputStyle, searchContainer, searchIcon, theme, badgetext } from './styles/TopNavStyles';
 import { visibility } from '../../Element.style';
+import CartContext from '../../store/cart-context';
 
 
-const TopNav = ( props) => {
+const TopNav = (props) => {
+    
+    const cartContext = useContext(CartContext);
+    const { items } = cartContext;
+
+    const numberOfCartItems = items.reduce((currentNumber, item) =>  {
+        return currentNumber + item.amount;
+    }, 0);
+
     return (
         <Container sx={{ my: '20px' }}>
             <Flex justify='space-evenly'>
@@ -36,8 +45,8 @@ const TopNav = ( props) => {
                 <Box>
                     <ThemeProvider theme={theme}>
                         <Flex justify='space-evenly'>
-                            <Flex style={{cursor: 'pointer'}}>
-                                <Badge badgeContent={4} color="neutral">
+                            <Flex onClick={props.onCartClick} style={{cursor: 'pointer'}}>
+                                <Badge badgeContent={numberOfCartItems} color="neutral">
                                     <AiOutlineShoppingCart style={iconStyle} />
                                 </Badge>
                                 <Box sx={visibility}>

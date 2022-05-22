@@ -131,8 +131,6 @@ const BottomNav = () => {
                         </Flex>
                     </Box>
 
-
-
                 </Toolbar>
             </Container>
         </AppBar>

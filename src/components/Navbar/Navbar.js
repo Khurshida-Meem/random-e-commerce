@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
+import CartModal from '../Cart/CartModal';
 import BottomNav from './BottomNav';
 import TopNav from './TopNav';
 
-const Navbar = (props) => {
+const Navbar = () => {
+
+    const [open, setOpen] = useState(false);
+    const handleCartClick = () => setOpen(!open);
+
     return (
         <>
-            <TopNav />
+            {open && <CartModal open={open} onCartClick={handleCartClick} />}
+            <TopNav onCartClick={handleCartClick} />
             <hr />
             <BottomNav />
         </>
