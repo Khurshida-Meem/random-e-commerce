@@ -47,9 +47,9 @@ const CartItem = ({ item }) => {
                             -
                         </PrimaryButton>
                     </ButtonGroup>
-                    <Box sx={{ display: { md: 'none' } }}><h2>$45.20</h2></Box>
+                    <Box sx={{ display: { md: 'none' } }}><h2>{item.price}</h2></Box>
                 </Box>
-                <Box sx={{ display: { xs: 'none', md: 'block' } }}><h2>$45.20</h2></Box>
+                <Box sx={{ display: { xs: 'none', md: 'block' } }}><h2>{item.price}</h2></Box>
             </Box>
             <hr />
 

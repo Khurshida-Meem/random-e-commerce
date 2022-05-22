@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import CartModal from '../Cart/CartModal';
+import CartDialog from '../Cart/CartDialog';
 import BottomNav from './BottomNav';
 import TopNav from './TopNav';
 
@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <>
-            {open && <CartModal open={open} onCartClick={handleCartClick} />}
+            {open && <CartDialog open={open} onCartClick={handleCartClick} />}
             <TopNav onCartClick={handleCartClick} />
             <hr />
             <BottomNav />
