@@ -12,6 +12,7 @@ export const PrimaryButton = styled.button`
     cursor: pointer;
     transition: 0.3s;
     margin-top: ${(props) => props.marginTop};
+    box-shadow: 2px 2px 4px gray;
 
     &:hover {
     background-color: ${(props) => props.hoverBg};
@@ -31,6 +32,7 @@ export const ButtonSecondary = styled.button`
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 2px 2px 4px gray;
 
     &:hover {
       background-color: var(--color-yellow);
