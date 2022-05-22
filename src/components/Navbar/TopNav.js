@@ -12,7 +12,7 @@ import { iconStyle, inputStyle, searchContainer, searchIcon, theme, badgetext } 
 import { visibility } from '../../Element.style';
 
 
-const TopNav = () => {
+const TopNav = ( props) => {
     return (
         <Container sx={{ my: '20px' }}>
             <Flex justify='space-evenly'>

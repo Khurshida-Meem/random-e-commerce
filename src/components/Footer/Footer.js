@@ -54,7 +54,7 @@ const Footer = () => {
 
                         </Typography>
                     </Grid>
-                    <Grid item sm={12} md={3} sx={{ textAlign: 'center' }}>
+                    <Grid item sm={6} md={3} sx={{ textAlign: 'center' }}>
                         <Typography sx={{ color: 'var(--color-text)', fontWeight: '700', mb: '20px' }} variant="h6" component="div" gutterBottom>
                             Company
                         </Typography>
@@ -73,7 +73,7 @@ const Footer = () => {
                             ))
                         }
                     </Grid>
-                    <Grid item sm={12} md={3} sx={{ textAlign: 'center' }}>
+                    <Grid item sm={6} md={3} sx={{ textAlign: 'center' }}>
                         <Typography sx={{ color: 'var(--color-text)', fontWeight: '700', mb: '20px' }} variant="h6" component="div" gutterBottom>
                             Account
                         </Typography>
@@ -93,7 +93,7 @@ const Footer = () => {
                             ))
                         }
                     </Grid>
-                    <Grid item sm={12} md={3} sx={{ textAlign: 'center' }}>
+                    <Grid item sm={6} md={3} sx={{ textAlign: 'center' }}>
                     <Typography sx={{ color: 'var(--color-text)', fontWeight: '700', mb: '20px' }} variant="h6" component="div" gutterBottom>
                             Corporate
                         </Typography>

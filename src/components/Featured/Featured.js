@@ -26,7 +26,7 @@ const featuredCard = {
 
 const Featured = () => {
     return (
-        <Container sx={{ display: { md: 'flex' }, mt: '50px' }}>
+        <Container sx={{ display: { sm: 'flex' }, mt: '50px' }}>
             {
                 featured.map(feature => (
                     <div
