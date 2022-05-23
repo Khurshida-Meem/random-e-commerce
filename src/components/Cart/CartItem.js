@@ -29,8 +29,8 @@ const CartItem = ({ item }) => {
                     <img src={item.image} alt="" height='50px' />
                     <Box sx={{ml: '8px', width: '70%'}}>
                         <h3>{item.name}</h3>
-                        <h2>{item.price}</h2>
-                        <h3 style={{ color: 'var(--color-primary)' }}>x {item.amount}</h3>
+                        <h2 style={{ color: 'var(--color-primary)' }}>${item.price}</h2>
+                        <h3 style={{ color: 'var(--color-yellow)' }}>x {item.amount}</h3>
                     </Box>
                 </Flex>
                 <Box sx={{
